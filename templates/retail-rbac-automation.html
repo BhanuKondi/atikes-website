@@ -1,0 +1,213 @@
+{% extends 'base.html' %}{% block title %}Retail IAM Automation | Atikes{% endblock %}{% block content %}
+<section class="case-hero">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <p class="eyebrow">CASE STUDY</p>
+                <h1>Retail IAM Automation for a <span>Leading Fashion Retailer</span></h1>
+                <p class="hero-copy">How Atikes transformed manual onboarding, offboarding, and access requests into a
+                    role-based automation model for a large distributed retail workforce.</p>
+                <div class="trust-list"><span><i class="bi bi-ticket-perforated-fill"></i>5,000
+                        tickets/year</span><span><i class="bi bi-shield-check"></i>RBAC automation</span><span><i
+                            class="bi bi-clock-history"></i>7,500 hours saved</span><span><i
+                            class="bi bi-lightning-charge-fill"></i>Payback &lt; 1 month</span></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="dashboard">
+                    <aside><i class="bi bi-house"></i><i class="bi bi-people"></i><i class="bi bi-shield-check"></i><i
+                            class="bi bi-gear"></i></aside>
+                    <div class="dashboard-main"><b>IAM Overview</b>
+                        <div class="dash-stats"><span>Onboarded<strong>1,248</strong><em>+12%</em></span><span>Access
+                                Requests<strong>842</strong><em>+8%</em></span><span>Leavers<strong>612</strong><em>+5%</em></span><span>Automated<strong>92%</strong><em>●</em></span>
+                        </div>
+                        <div class="dash-chart"><small>Access Requests Trend</small><svg viewBox="0 0 400 130"
+                                role="img" aria-label="Upward access request trend">
+                                <path d="M0 30H400M0 65H400M0 100H400" />
+                                <polyline points="5,110 45,94 80,100 125,70 160,82 205,52 250,60 300,37 390,18" />
+                            </svg></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section case-study-details">
+    <div class="container">
+        <div class="fact-grid">{% for icon,label,value in [('building','Industry','Fashion retail'),('diagram-3','Use
+            case','Onboarding, offboarding, access requests'),('ticket-perforated','Annual volume','5,000
+            tickets'),('clock-history','Manual effort','1.5 hours per ticket'),('shield-check','Delivery
+            model','Role-based access automation')] %}<article><i class="bi bi-{{ icon }}"></i><small>{{ label
+                    }}</small><b>{{ value }}</b></article>{% endfor %}</div>
+        <div class="row g-3 mt-1">
+            <div class="col-lg-6">
+                <article class="info-card">
+                    <h2><i class="bi bi-exclamation-triangle"></i> The Challenge</h2>
+                    <ul>
+                        <li>5,000 annual tickets across onboarding, offboarding, and access requests.</li>
+                        <li>Every ticket required around 1.5 hours of manual effort.</li>
+                        <li>Repeated service desk work slowed access provisioning.</li>
+                        <li>Inconsistent role assignment created productivity and audit risk.</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article class="info-card">
+                    <h2><i class="bi bi-check-circle-fill"></i> The Solution</h2>
+                    <ul>
+                        <li>Implemented HR event-driven lifecycle processes.</li>
+                        <li>Designed RBAC based on role, brand, store, and access profile.</li>
+                        <li>Automated governance workflows and provisioning.</li>
+                        <li>Standardized requests, controls, and leaver actions.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <div class="automation-flow"><span><i class="bi bi-person-badge"></i>HR Event</span><b>→</b><span><i
+                    class="bi bi-shield-check"></i>Identity Governance</span><b>→</b><span><i
+                    class="bi bi-diagram-3"></i>RBAC Rules</span><b>→</b><span><i
+                    class="bi bi-cloud-arrow-up"></i>Provisioning</span><b>→</b><span><i
+                    class="bi bi-check-circle-fill"></i>Access Ready</span></div>
+        <div class="section-heading mt-5">
+            <h2>ROI / Impact at a Glance</h2>
+        </div>
+        <div class="metric-grid">{% for icon,value,label in [('ticket-perforated','5,000','tickets per
+            year'),('clock-history','1.5 hrs','average manual effort per ticket'),('calculator','7,500 hrs','annual
+            effort eliminated'),('people','420 hrs','implementation effort'),('calendar2-check','7,080 hrs','net
+            first-year hours returned'),('graph-up','1,686% ROI','first-year time-based ROI'),('people','3.6
+            FTE','annual capacity freed'),('calendar','0.7 months','estimated payback period')] %}<article><i
+                    class="bi bi-{{ icon }}"></i>
+                <div><strong>{{ value }}</strong><small>{{ label }}</small></div>
+            </article>{% endfor %}</div>
+    </div>
+</section>
+<section class="section">
+  <div class="container">
+
+    <!-- Implementation Effort -->
+    <div class="effort-card">
+
+      <div class="effort-header">
+        <h2>Implementation Effort Breakdown</h2>
+        <p>Delivered through a focused cross-functional engineering effort.</p>
+      </div>
+
+      <!-- Labels -->
+      <div class="effort-labels">
+        <div>
+          <span>Discovery & process mapping</span>
+          <b>60h</b>
+        </div>
+        <div>
+          <span>RBAC design</span>
+          <b>80h</b>
+        </div>
+        <div>
+          <span>Workflow / integration build</span>
+          <b>170h</b>
+        </div>
+        <div>
+          <span>Testing & rollout</span>
+          <b>70h</b>
+        </div>
+        <div>
+          <span>Documentation & hypercare</span>
+          <b>40h</b>
+        </div>
+      </div>
+
+      <!-- Single Bar -->
+      <div class="effort-bar">
+        <div class="seg dark"></div>
+        <div class="seg blue"></div>
+        <div class="seg cyan"></div>
+        <div class="seg blue"></div>
+        <div class="seg green"></div>
+      </div>
+
+      <div class="effort-total">Total: 420h</div>
+    </div>
+
+
+    <!-- Outcomes -->
+    <div class="outcomes-section">
+
+      <h2>Outcomes Delivered</h2>
+
+      <div class="row g-4 mt-2">
+
+        <div class="col-md-3">
+          <div class="outcome-box">
+            <div class="icon teal"><i class="bi bi-rocket-takeoff"></i></div>
+            <h5>Faster onboarding and day-one readiness</h5>
+            <p>New hires get the right access from day one, improving store productivity.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="outcome-box">
+            <div class="icon blue"><i class="bi bi-headset"></i></div>
+            <h5>Reduced manual service desk workload</h5>
+            <p>Automation eliminates repetitive tasks and lowers ticket volume significantly.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="outcome-box">
+            <div class="icon teal"><i class="bi bi-shield-check"></i></div>
+            <h5>Consistent role-based access at scale</h5>
+            <p>RBAC ensures the right access by role, brand, and store — consistently.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="outcome-box">
+            <div class="icon blue"><i class="bi bi-file-earmark-text"></i></div>
+            <h5>Improved audit readiness and governance visibility</h5>
+            <p>Stronger controls, complete visibility, and simplified audit reviews.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="footer-cta">
+    <div class="container">
+
+        <div class="footer-cta-content">
+
+            <div class="footer-cta-icon">
+                <i class="bi bi-people"></i>
+            </div>
+
+            <div class="footer-cta-text">
+                <h2>Looking to automate retail identity workflows?</h2>
+
+                <p>
+                    Atikes helps fashion and retail organizations reduce ticket volume,
+                    standardize access, and accelerate secure onboarding through modern
+                    identity governance.
+                </p>
+            </div>
+
+            <div class="footer-cta-buttons">
+                <a href="{{ url_for('consultation') }}"
+                   class="footer-cta-primary">
+                    Talk to Atikes <i class="bi bi-arrow-right"></i>
+                </a>
+
+                <a href="{{ url_for('success_stories') }}"
+                   class="footer-cta-secondary">
+                    View More Success Stories
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock %}

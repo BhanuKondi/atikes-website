@@ -1,0 +1,688 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Atikes | Identity Governance That Scales With Your Business
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="new-home-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT SIDE -->
+            <div class="col-lg-6">
+
+                <p class="eyebrow">
+                    IDENTITY & ACCESS MANAGEMENT
+                </p>
+
+                <h1>
+                    Identity governance
+                    <span>that scales with your business</span>
+                </h1>
+
+                <p class="hero-copy">
+
+                    Atikes helps enterprises automate joiner-mover-leaver
+                    processes, strengthen access governance, reduce risk,
+                    and deliver audit-ready identity operations.
+
+                </p>
+
+                <div class="hero-actions">
+
+                  <a href="https://calendly.com/atikes-sales/30min"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="btn btn-primary">
+
+    Book a Consultation
+    <i class="bi bi-arrow-right"></i>
+
+</a>
+
+                    <a href="{{ url_for('services') }}" class="btn btn-outline-primary">
+
+                        Explore Services
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE - IAM DASHBOARD -->
+            <div class="col-lg-6">
+
+                <div class="home-dashboard">
+
+                    <div class="dashboard-sidebar">
+
+                        <i class="bi bi-grid"></i>
+                        <i class="bi bi-people"></i>
+                        <i class="bi bi-shield-check"></i>
+                        <i class="bi bi-person-check"></i>
+                        <i class="bi bi-bar-chart"></i>
+
+                    </div>
+
+
+                    <div class="dashboard-content">
+
+                        <div class="dashboard-title">
+
+                            <strong>IAM Overview</strong>
+
+                            <span>
+                                <i class="bi bi-three-dots"></i>
+                            </span>
+
+                        </div>
+
+
+                        <!-- STATS -->
+
+                        <div class="dashboard-stats">
+
+                            <div class="dashboard-stat">
+
+                                <small>Identities</small>
+
+                                <strong>12,480</strong>
+
+                                <em>+12%</em>
+
+                            </div>
+
+
+                            <div class="dashboard-stat">
+
+                                <small>Access Requests</small>
+
+                                <strong>8,742</strong>
+
+                                <em>+8%</em>
+
+                            </div>
+
+
+                            <div class="dashboard-stat">
+
+                                <small>Access Reviews</small>
+
+                                <strong>1,320</strong>
+
+                                <em>+14%</em>
+
+                            </div>
+
+
+                            <div class="dashboard-stat">
+
+                                <small>Applications</small>
+
+                                <strong>256</strong>
+
+                                <em>+7%</em>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CHART -->
+
+                        <div class="dashboard-chart">
+
+                            <div class="chart-header">
+
+                                <span>
+                                    Access Request Trend
+                                </span>
+
+                                <small>
+                                    Last 6 Months
+                                </small>
+
+                            </div>
+
+                            <svg viewBox="0 0 500 180" preserveAspectRatio="none">
+
+                                <line x1="0" y1="140" x2="500" y2="140"></line>
+
+                                <line x1="0" y1="90" x2="500" y2="90"></line>
+
+                                <line x1="0" y1="40" x2="500" y2="40"></line>
+
+                                <polyline points="
+                                    0,145
+                                    70,125
+                                    130,135
+                                    190,100
+                                    245,108
+                                    310,78
+                                    370,90
+                                    430,50
+                                    500,25
+                                    ">
+                                </polyline>
+
+                            </svg>
+
+                        </div>
+
+
+                        <!-- CERTIFICATION -->
+
+                        <div class="dashboard-bottom">
+
+                            <div class="certification-card">
+
+                                <span>Certifications</span>
+
+                                <strong>92%</strong>
+
+                                <small>
+                                    Certified &nbsp; 64% <br>
+                                    Pending &nbsp;&nbsp; 36%
+                                </small>
+
+                            </div>
+
+
+                            <div class="dashboard-mini">
+
+                                <span>Lifecycle Workflows</span>
+
+                                <strong>86</strong>
+
+                                <small>Active workflows</small>
+
+                            </div>
+
+
+                            <div class="dashboard-mini">
+
+                                <span>High Risk Access</span>
+
+                                <strong>27</strong>
+
+                                <small>Requires review</small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TECHNOLOGY PARTNERS
+========================= -->
+
+<section class="home-partners">
+
+    <div class="container">
+
+        <p class="partner-heading">
+            TRUSTED TECHNOLOGY PARTNERS
+        </p>
+
+      <div class="partner-list">
+
+   
+
+    <div class="partner-item">
+        <img src="{{ url_for('static', filename='images/Partners/okta.png') }}"
+             alt="Okta logo">
+        <span>Okta</span>
+    </div>
+
+    
+
+    <div class="partner-item">
+        <img src="{{ url_for('static', filename='images/Partners/evolveum.png') }}"
+             alt="Evolveum logo">
+        <span>Evolveum</span>
+    </div>
+
+   
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="section home-services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                OUR SERVICES
+            </p>
+
+            <h2>
+                Identity solutions built for
+                <span>secure business growth</span>
+            </h2>
+
+            <p>
+                From identity automation to access governance,
+                Atikes helps organizations simplify IAM while
+                improving security and compliance.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <article class="home-service-card">
+
+                    <div class="home-service-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+
+                    <h3>
+                        Identity Automation
+                    </h3>
+
+                    <p>
+                        Automate identity lifecycle processes,
+                        provisioning, deprovisioning, and
+                        reduce manual effort.
+                    </p>
+
+                    <a href="{{ url_for('services') }}">
+                        Learn more
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <article class="home-service-card">
+
+                    <div class="home-service-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <h3>
+                        Access Governance
+                    </h3>
+
+                    <p>
+                        Govern access, enforce policies,
+                        improve visibility, and ensure
+                        the right users have the right access.
+                    </p>
+
+                    <a href="{{ url_for('solutions') }}">
+                        Learn more
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <article class="home-service-card">
+
+                    <div class="home-service-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h3>
+                        RBAC & Access Modeling
+                    </h3>
+
+                    <p>
+                        Build business-driven roles and
+                        least-privilege access models
+                        aligned to security requirements.
+                    </p>
+
+                    <a href="{{ url_for('solutions') }}">
+                        Learn more
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <article class="home-service-card">
+
+                    <div class="home-service-icon">
+                        <i class="bi bi-arrow-repeat"></i>
+                    </div>
+
+                    <h3>
+                        Lifecycle Management
+                    </h3>
+
+                    <p>
+                        Streamline employee lifecycle
+                        processes from onboarding through
+                        role changes and termination.
+                    </p>
+
+                    <a href="{{ url_for('services') }}">
+                        Learn more
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <article class="home-service-card">
+
+                    <div class="home-service-icon">
+                        <i class="bi bi-clipboard-check"></i>
+                    </div>
+
+                    <h3>
+                        Access Reviews & Certifications
+                    </h3>
+
+                    <p>
+                        Improve certification campaigns,
+                        governance controls, audit readiness,
+                        and access visibility.
+                    </p>
+
+                    <a href="{{ url_for('solutions') }}">
+                        Learn more
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <article class="home-service-card">
+
+                    <div class="home-service-icon">
+                        <i class="bi bi-cloud"></i>
+                    </div>
+
+                    <h3>
+                        IAM Managed Services
+                    </h3>
+
+                    <p>
+                        Ongoing monitoring, optimization,
+                        operational support, and continuous
+                        improvement for IAM platforms.
+                    </p>
+
+                    <a href="{{ url_for('consultation') }}">
+                        Learn more
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEASURABLE OUTCOMES
+========================= -->
+
+<section class="section section-tint home-outcomes">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-4">
+
+                <p class="eyebrow">
+                    OUTCOMES YOU CAN MEASURE
+                </p>
+
+                <h2>
+                    Real results for
+                    <span>IT, Security, and HR teams</span>
+                </h2>
+
+                <p>
+                    Our IAM programs are designed around
+                    measurable operational and security outcomes.
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-8">
+
+                <div class="outcome-grid">
+
+                    <article>
+                        <i class="bi bi-lightning-charge"></i>
+                        <strong>Reduce manual access tickets</strong>
+                    </article>
+
+                    <article>
+                        <i class="bi bi-calendar-check"></i>
+                        <strong>Improve day-one readiness</strong>
+                    </article>
+
+                    <article>
+                        <i class="bi bi-person-x"></i>
+                        <strong>Remove leaver access faster</strong>
+                    </article>
+
+                    <article>
+                        <i class="bi bi-shield-check"></i>
+                        <strong>Standardize RBAC</strong>
+                    </article>
+
+                    <article>
+                        <i class="bi bi-clipboard-check"></i>
+                        <strong>Improve audit readiness</strong>
+                    </article>
+
+                    <article>
+                        <i class="bi bi-headset"></i>
+                        <strong>Reduce service desk workload</strong>
+                    </article>
+
+                    <article>
+                        <i class="bi bi-lock"></i>
+                        <strong>Lower access risk</strong>
+                    </article>
+
+                    <article>
+                        <i class="bi bi-diagram-3"></i>
+                        <strong>Scale IAM without adding headcount</strong>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RETAIL SUCCESS STORY
+========================= -->
+
+<section class="section home-success-story">
+
+    <div class="container">
+
+        <p class="eyebrow">
+            SUCCESS STORY PREVIEW
+        </p>
+
+        <div class="success-preview">
+
+          <div class="success-preview-image">
+    <img
+        src="{{ url_for('static', filename='images/retail-store.png') }}"
+        alt="Modern Retail Store"
+    >
+</div>
+
+            <div class="success-preview-content">
+
+                <p class="eyebrow">
+                    RETAIL IAM AUTOMATION
+                </p>
+
+                <h2>
+                    Retail IAM Automation at Scale
+                </h2>
+
+                <p>
+                    A leading retail organization partnered with
+                    Atikes to automate identity lifecycle management,
+                    access provisioning, and governance across
+                    a distributed workforce.
+                </p>
+
+
+                <div class="success-preview-metrics">
+
+                    <div>
+                        <strong>82%</strong>
+                        <small>
+                            Faster onboarding
+                        </small>
+                    </div>
+
+                    <div>
+                        <strong>7,500+</strong>
+                        <small>
+                            Hours saved
+                        </small>
+                    </div>
+
+                    <div>
+                        <strong>60%</strong>
+                        <small>
+                            Faster employee access
+                        </small>
+                    </div>
+
+                    <div>
+                        <strong>1,200+</strong>
+                        <small>
+                            Access reviews completed
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <a href="{{ url_for('retail_rbac_automation') }}" class="btn btn-outline-primary">
+
+                    View Success Story
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="home-final-cta">
+
+    <div class="container">
+
+        <div class="home-final-cta-inner">
+
+            <div>
+
+                <h2>
+                    Is your identity program ready for tomorrow?
+                </h2>
+
+                <p>
+                    Get a comprehensive IAM health check to uncover
+                    risks, gaps, and opportunities to strengthen
+                    your identity program.
+                </p>
+
+            </div>
+
+            <a href="{{ url_for('consultation') }}" class="btn btn-light">
+
+                Talk to Atikes
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

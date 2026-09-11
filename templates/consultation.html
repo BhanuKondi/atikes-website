@@ -1,0 +1,473 @@
+{% extends 'base.html' %}
+
+{% block title %}Book a Consultation | Atikes{% endblock %}
+
+{% block content %}
+
+<!-- =====================================================
+     CONSULTATION HERO
+===================================================== -->
+
+<section class="consultation-hero">
+
+    <div class="consultation-hero-glow"></div>
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT -->
+            <div class="col-lg-5">
+
+                <div class="consultation-hero-content">
+
+                    <p class="eyebrow">
+                        BOOK A CONSULTATION
+                    </p>
+
+                    <h1>
+                        Let's build a more
+                        <span>secure identity program.</span>
+                    </h1>
+
+                    <p class="hero-copy">
+                        Schedule a 30-minute conversation with
+                        Atikes IAM experts. We'll understand your
+                        goals, identify opportunities, and help
+                        define practical next steps.
+                    </p>
+
+
+                    <!-- TRUST ITEMS -->
+
+                    <div class="consultation-trust">
+
+                        <div class="trust-item">
+
+                            <div class="trust-icon">
+                                <i class="bi bi-person-check"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Expert-led guidance
+                                </strong>
+
+                                <span>
+                                    Practical IAM experience
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="trust-item">
+
+                            <div class="trust-icon">
+                                <i class="bi bi-check2-circle"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    No obligation
+                                </strong>
+
+                                <span>
+                                    Start with a conversation
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="trust-item">
+
+                            <div class="trust-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Confidential
+                                </strong>
+
+                                <span>
+                                    Your information stays private
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT — FORM -->
+            <div class="col-lg-7">
+
+                <div class="consultation-form-wrapper">
+
+                    <div class="consultation-form-header">
+
+                        <span class="form-badge">
+                            <i class="bi bi-calendar2-check"></i>
+                            30 MINUTES
+                        </span>
+
+                        <h2>
+                            Let's start the conversation
+                        </h2>
+
+                        <p>
+                            Tell us a little about your organization
+                            and what you're looking to achieve.
+                        </p>
+
+                    </div>
+
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+
+                        {% for category, message in messages %}
+
+                            <div class="alert alert-success consultation-alert">
+                                {{ message }}
+                            </div>
+
+                        {% endfor %}
+
+                    {% endwith %}
+
+
+                    <form method="post"
+                          class="consultation-form">
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <label class="consultation-label">
+
+                                    Full Name
+                                    <span>*</span>
+
+                                    <input
+                                        name="name"
+                                        class="form-control"
+                                        required
+                                        placeholder="Enter your full name"
+                                    >
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="consultation-label">
+
+                                    Company
+                                    <span>*</span>
+
+                                    <input
+                                        name="company"
+                                        class="form-control"
+                                        required
+                                        placeholder="Enter your company name"
+                                    >
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="consultation-label">
+
+                                    Work Email
+                                    <span>*</span>
+
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        class="form-control"
+                                        required
+                                        placeholder="name@company.com"
+                                    >
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="consultation-label">
+
+                                    Phone
+
+                                    <input
+                                        name="phone"
+                                        type="tel"
+                                        class="form-control"
+                                        placeholder="+1 (000) 000-0000"
+                                    >
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label class="consultation-label">
+
+                                    What would you like to discuss?
+
+                                    <textarea
+                                        name="details"
+                                        class="form-control"
+                                        rows="5"
+                                        placeholder="Tell us about your goals, challenges, current IAM environment, or what you'd like to improve..."
+                                    ></textarea>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="consultation-form-footer">
+
+                            <p class="consultation-security">
+
+                                <i class="bi bi-shield-check"></i>
+
+                                Your information is secure and only
+                                used to prepare for your conversation.
+
+                            </p>
+
+
+                            <button
+                                class="btn btn-primary consultation-submit"
+                                type="submit"
+                            >
+
+                                Request Consultation
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHAT HAPPENS NEXT
+===================================================== -->
+
+<section class="section section-tint consultation-process-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <p class="eyebrow">
+                SIMPLE PROCESS
+            </p>
+
+            <h2>
+                What happens
+                <span>next?</span>
+            </h2>
+
+            <p>
+                We make it easy to start the conversation
+                and quickly turn your IAM challenges into
+                practical next steps.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid consultation-process-grid">
+
+
+            <!-- STEP 01 -->
+
+            <article class="process-card">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <div class="process-icon">
+                    <i class="bi bi-person-plus"></i>
+                </div>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <p>
+                    We receive your inquiry and reach out
+                    within one business day.
+                </p>
+
+                
+
+            </article>
+
+
+            <!-- STEP 02 -->
+
+            <article class="process-card">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <div class="process-icon">
+                    <i class="bi bi-chat-dots"></i>
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    We learn about your goals, challenges,
+                    and current IAM environment.
+                </p>
+
+              
+
+            </article>
+
+
+            <!-- STEP 03 -->
+
+            <article class="process-card">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <div class="process-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+
+                <h3>
+                    Recommend
+                </h3>
+
+                <p>
+                    We provide tailored recommendations
+                    and practical solution options.
+                </p>
+
+             
+
+            </article>
+
+
+            <!-- STEP 04 -->
+
+            <article class="process-card">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <div class="process-icon">
+                    <i class="bi bi-bar-chart-line"></i>
+                </div>
+
+                <h3>
+                    Deliver Value
+                </h3>
+
+                <p>
+                    We partner with you to turn your IAM
+                    strategy into measurable outcomes.
+                </p>
+
+              
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="section consultation-final-section">
+
+    <div class="container">
+
+        <div class="consultation-final-cta">
+
+            <div class="cta-content">
+
+                <p class="eyebrow">
+                    YOUR NEXT STEP
+                </p>
+
+                <h2>
+                    Ready to modernize identity?
+                </h2>
+
+                <p>
+                    Bring your questions, goals, and current
+                    challenges. We'll bring practical IAM
+                    experience and a clear path forward.
+                </p>
+
+            </div>
+
+
+            <div class="cta-action">
+
+                <a
+                    href="{{ url_for('contact') }}"
+                    class="btn btn-light"
+                >
+                    Contact Our Team
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

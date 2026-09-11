@@ -1,0 +1,830 @@
+{% extends 'base.html' %}
+{% block title %}{{ page.title }} {{ page.accent }} | Atikes{% endblock %}
+{% block content %}
+<section class="marketing-hero {{ page_name }}-hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <p class="eyebrow">{% if page_name == 'partners' %}TRUSTED PARTNERS{% elif page_name == 'about' %}ABOUT ATIKES{%
+          else %}{{ page.eyebrow }}{% endif %}</p>
+        <h1>{% if page_name == 'partners' %}Technology Partners <span>Powering Secure Identity</span>{% elif page_name
+          == 'about' %}Identity. Security. Trust.<span> That’s Atikes.</span>{% else %}{{ page.title }} <span>{{
+            page.accent }}</span>{% endif %}</h1>
+        <p class="hero-copy">{% if page_name == 'about' %}Atikes is an identity and access management consultancy
+          helping enterprises protect critical resources, simplify access, and govern identities with confidence.{% else
+          %}{{ page.intro }}{% endif %}</p>
+        <div class="trust-list">{% for item in page.trust %}<span><i class="bi bi-check-circle-fill"></i>{{ item
+            }}</span>{% endfor %}</div>
+        <div class="hero-actions"><a class="btn btn-primary" href="{{ url_for('consultation') }}">{% if page_name ==
+            'health' %}Request an IAM Health Check{% else %}Book a Consultation{% endif %} <i
+              class="bi bi-arrow-right"></i></a>{% if page_name != 'health' %}<a class="btn btn-outline-primary"
+            href="#offerings">Explore {% if page_name == 'partners' %}Partnerships{% else %}Our Services{% endif %} <i
+              class="bi bi-arrow-right"></i></a>{% endif %}</div>
+      </div>
+      <div class="col-lg-6">
+        {% if page_name == 'partners' %}
+        <div class="partner-hero-logos" aria-label="Atikes technology partners">
+
+          <div class="partner-logo-item">
+            <img src="{{ url_for('static', filename='images/Partners/sailpoint.png') }}" alt="SailPoint">
+            <span>SailPoint</span>
+          </div>
+
+          <div class="partner-logo-item">
+            <img src="{{ url_for('static', filename='images/Partners/okta.png') }}" alt="Okta">
+            <span>Okta</span>
+          </div>
+
+          <div class="partner-logo-item">
+            <img src="{{ url_for('static', filename='images/Partners/microsoft-entra.png') }}" alt="Microsoft Entra">
+            <span>Microsoft Entra</span>
+          </div>
+
+          <div class="partner-logo-item">
+            <img src="{{ url_for('static', filename='images/Partners/evolveum.png') }}" alt="Evolveum">
+            <span>Evolveum</span>
+          </div>
+
+          <div class="partner-logo-item">
+            <img src="{{ url_for('static', filename='images/Partners/workday.png') }}" alt="Workday">
+            <span>Workday</span>
+          </div>
+
+          <div class="partner-logo-item">
+            <img src="{{ url_for('static', filename='images/Partners/freshservice.png') }}" alt="Freshservice">
+            <span>Freshservice</span>
+          </div>
+
+        </div>
+        {% elif page_name == 'about' %}
+
+        <div class="about-hero-visual">
+          <img src="{{ url_for('static', filename='images/about-identity-security.png') }}"
+            alt="Identity Security and Access Management">
+        </div>
+        {% else %}
+        <div class="security-visual" aria-label="Identity security illustration">
+          <div class="network"></div>
+          <div class="visual-node node-one"><i class="bi bi-person-fill"></i></div>
+          <div class="visual-node node-two"><i class="bi bi-cloud-fill"></i></div>
+          <div class="visual-node node-three"><i class="bi bi-database-fill"></i></div>
+          <div class="shield"><i class="bi bi-{{ page.hero_icon }}"></i></div>
+          <div class="platform"><i></i><i></i><i></i></div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if page_name == 'services' %}
+<section class="section" id="offerings">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Our IAM Services</h2>
+      <p>End-to-end services to build a secure, compliant, and resilient identity ecosystem.</p>
+    </div>
+    <div class="row g-3">{% for icon,title,text in page.cards %}<div class="col-sm-6 col-lg-3">
+        <article class="feature-card service-tile">
+          <div class="feature-icon"><i class="bi bi-{{ icon }}"></i></div>
+          <h3>{{ title }}</h3>
+          <p>{{ text }}</p><a
+            href="{% if title == 'Agentic AI & AI Identity Security' %}#agentic-ai{% else %}{{ url_for('consultation') }}{% endif %}">{%
+            if title == 'Agentic AI & AI Identity Security' %}Explore capability{% else %}Learn more{% endif %} <i
+              class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>{% endfor %}</div>
+  </div>
+</section>
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Our Delivery Methodology</h2>
+      <p>A proven, phased approach to deliver secure and measurable IAM outcomes.</p>
+    </div>
+    <div class="process-grid">{% for step in ['Assess','Design','Implement','Optimize'] %}<article class="process-card">
+        <span>{{ loop.index }}</span>
+        <div class="process-icon"><i
+            class="bi bi-{{ ['clipboard-search','diagram-3','gear','graph-up-arrow'][loop.index0] }}"></i></div>
+        <h3>{{ step }}</h3>
+        <p>{% if loop.index == 1 %}Evaluate current state, tools, processes, and risks.{% elif loop.index == 2 %}Define
+          target architecture, governance models, roles, and policies.{% elif loop.index == 3 %}Configure, integrate,
+          and automate with rigorous testing.{% else %}Measure, monitor, and continuously improve business outcomes.{%
+          endif %}</p>
+      </article>{% endfor %}</div>
+  </div>
+</section>
+<section class="section" id="solution-areas">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">OUR SOLUTION AREAS</p>
+      <h2>Solutions for Modern Identity Challenges</h2>
+      <p>Targeted identity governance solutions built for secure, scalable, and measurable outcomes.</p>
+    </div>
+    <div class="row g-3">{% for icon,title,text in PAGES_SOLUTIONS.cards %}<div class="col-sm-6 col-lg-4">
+        <article class="feature-card service-tile">
+          <div class="feature-icon"><i class="bi bi-{{ icon }}"></i></div>
+          <h3>{{ title }}</h3>
+          <p>{{ text }}</p><a href="{{ url_for('consultation') }}">Learn more <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>{% endfor %}</div>
+  </div>
+</section>
+<section class="section section-tint" id="agentic-ai">
+  <div class="container">
+    <div class="agentic-service">
+      <div class="agentic-service-copy">
+        <p class="eyebrow">AGENTIC AI &amp; AI IDENTITY SECURITY</p>
+        <h2>Secure enterprise agent automation with identity governance built in.</h2>
+        <p>Build AI agents that can act across enterprise systems without creating a new identity blind spot. Atikes
+          helps organizations design secure agent identity and access models, connect AI agents to enterprise
+          applications, govern human and non-human ownership, apply short-lived and least-privilege authorization, and
+          establish monitoring, audit, and rapid revocation controls.</p>
+        <a class="btn btn-primary" href="{{ url_for('consultation') }}">Discuss your AI identity strategy <i
+            class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="agentic-capabilities">
+        <h3>Core capabilities</h3>
+        <ul>
+          <li><i class="bi bi-check2-circle"></i>Agent identity, ownership &amp; lifecycle governance</li>
+          <li><i class="bi bi-check2-circle"></i>Least-privilege, JIT and short-lived authorization</li>
+          <li><i class="bi bi-check2-circle"></i>MCP &amp; API access governance</li>
+          <li><i class="bi bi-check2-circle"></i>AI agent onboarding, offboarding and access reviews</li>
+          <li><i class="bi bi-check2-circle"></i>Human-in-the-loop approvals and kill/revocation controls</li>
+          <li><i class="bi bi-check2-circle"></i>Audit trails, activity visibility and policy enforcement</li>
+          <li><i class="bi bi-check2-circle"></i>SailPoint, Okta, Entra ID and security-platform integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="challenge-box">
+      <h2>Solving Your Most Critical IAM Challenges</h2>
+      <div class="challenge-grid">
+        <article><i class="bi bi-shield-lock"></i>
+          <div>
+            <h3>Excessive Access Risk</h3>
+            <p>Reduce privileged access and enforce least privilege.</p>
+          </div>
+        </article>
+        <article><i class="bi bi-clock"></i>
+          <div>
+            <h3>Manual &amp; Inefficient Processes</h3>
+            <p>Automate lifecycle processes and reduce overhead.</p>
+          </div>
+        </article>
+        <article><i class="bi bi-clipboard-check"></i>
+          <div>
+            <h3>Audit &amp; Compliance Pressure</h3>
+            <p>Streamline certifications and evidence collection.</p>
+          </div>
+        </article>
+        <article><i class="bi bi-cloud"></i>
+          <div>
+            <h3>Siloed Identity Ecosystems</h3>
+            <p>Unify identities and access across applications.</p>
+          </div>
+        </article>
+        <article><i class="bi bi-person-fill"></i>
+          <div>
+            <h3>Limited Visibility &amp; Control</h3>
+            <p>Gain end-to-end visibility for better decisions.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="challenge-box outcomes-box">
+      <h2>Outcomes You Can Expect</h2>
+      <div class="challenge-grid">{% for icon,title,text in page.outcomes %}<article><i class="bi bi-{{ icon }}"></i>
+          <div>
+            <h3>{{ title }}</h3>
+            <p>{{ text }}</p>
+          </div>
+        </article>{% endfor %}</div>
+    </div>
+  </div>
+</section>
+{% elif page_name in ['sailpoint','okta'] %}
+<section class="section" id="offerings">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">{{ 'OUR OKTA SERVICES' if page_name == 'okta' else 'END-TO-END SAILPOINT SERVICES' }}</p>
+      <h2>{{ page.section_title }}</h2>
+      <p>{{ page.section_intro }}</p>
+    </div>
+    <div class="row g-3">{% for icon,title,text in page.cards %}<div
+        class="{{ 'col-sm-6 col-lg' if page_name == 'sailpoint' else 'col-sm-6 col-lg-4' }}">
+        <article class="feature-card service-tile">
+          <div class="feature-icon"><i class="bi bi-{{ icon }}"></i></div>
+          <h3>{{ title }}</h3>
+          <p>{{ text }}</p><a href="{{ url_for('consultation') }}">Learn more <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>{% endfor %}</div>
+  </div>
+</section>
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-heading">
+      <h2>{{ 'Our Proven Delivery Approach' if page_name == 'sailpoint' else 'Outcomes That Drive Business Impact' }}
+      </h2>
+    </div>{% if page_name == 'sailpoint' %}<div class="process-grid six-process">{% for step in page.method %}<article
+        class="process-card"><span>{{ loop.index }}</span>
+        <div class="process-icon"><i
+            class="bi bi-{{ ['search','diagram-3','gear','clipboard-check','rocket-takeoff','headset'][loop.index0] }}"></i>
+        </div>
+        <h3>{{ step }}</h3>
+        <p>Secure, scalable SailPoint delivery for your business.</p>
+      </article>{% endfor %}</div>{% else %}<div class="outcome-panel">
+      <div class="row g-0">{% for icon,title,text in page.outcomes %}<div class="col-sm-6 col-lg-3">
+          <article class="outcome"><i class="bi bi-{{ icon }}"></i>
+            <div>
+              <h3>{{ title }}</h3>
+              <p>{{ text }}</p>
+            </div>
+          </article>
+        </div>{% endfor %}</div>
+    </div>{% endif %}
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="detail-band">
+      <div>
+        <p class="eyebrow">{{ 'CORE SAILPOINT CAPABILITIES WE DELIVER' if page_name == 'sailpoint' else 'COMMON
+          ENTERPRISE USE CASES' }}</p>
+        <h2>{{ 'Core SailPoint Capabilities We Deliver' if page_name == 'sailpoint' else 'Purpose-Built for Modern
+          Enterprises' }}</h2>
+        <p>Connect identity, governance, and access management across your enterprise with practical, measurable
+          outcomes.</p>
+      </div>
+      <ul>
+        <li><i class="bi bi-check2-circle"></i> Cloud &amp; SaaS integrations</li>
+        <li><i class="bi bi-check2-circle"></i> Least privilege access</li>
+        <li><i class="bi bi-check2-circle"></i> Intelligent access reviews</li>
+        <li><i class="bi bi-check2-circle"></i> Audit &amp; compliance ready</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% elif page_name == 'solutions' %}
+<section class="section" id="offerings">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Our Identity &amp; Access Management Solutions</h2>
+      <p>Comprehensive solutions for secure, scalable, and measurable identity outcomes.</p>
+    </div>
+    <div class="row g-3">{% for icon,title,text in page.cards %}<div class="col-sm-6 col-lg-4">
+        <article class="feature-card">
+          <div class="feature-icon"><i class="bi bi-{{ icon }}"></i></div>
+          <h3>{{ title }}</h3>
+          <p>{{ text }}</p><a href="{{ url_for('consultation') }}">Learn more <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>{% endfor %}</div>
+  </div>
+</section>
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Business Outcomes You Can Achieve</h2>
+    </div>
+    <div class="outcome-panel">
+      <div class="row g-0">{% for icon,title,text in page.outcomes %}<div class="col-sm-6 col-lg-3">
+          <article class="outcome"><i class="bi bi-{{ icon }}"></i>
+            <div>
+              <h3>{{ title }}</h3>
+              <p>{{ text }}</p>
+            </div>
+          </article>
+        </div>{% endfor %}</div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Ideal for These Enterprise Scenarios</h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-sm-6 col-lg">
+        <article class="scenario-card"><i class="bi bi-building"></i>
+          <h3>Digital Workforce Transformation</h3>
+          <p>Scale identity processes to support a modern, hybrid workforce.</p>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg">
+        <article class="scenario-card"><i class="bi bi-cloud"></i>
+          <h3>Cloud &amp; SaaS Adoption</h3>
+          <p>Secure identities across multi-cloud and SaaS applications.</p>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg">
+        <article class="scenario-card"><i class="bi bi-shield-star"></i>
+          <h3>Regulatory Compliance Programs</h3>
+          <p>Meet industry regulations and internal policies with confidence.</p>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg">
+        <article class="scenario-card"><i class="bi bi-handshake"></i>
+          <h3>Mergers, Acquisitions &amp; Divestitures</h3>
+          <p>Rapidly integrate and govern identities during transitions.</p>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg">
+        <article class="scenario-card"><i class="bi bi-server"></i>
+          <h3>Privileged Access Management</h3>
+          <p>Control and monitor privileged access to critical systems.</p>
+        </article>
+      </div>
+    </div>
+    <div class="split-panels mt-4">
+      <article>
+        <h2>How Atikes Delivers Solutions</h2>
+        <p><b>Discover &amp; Assess</b><br>Understand your business, identity landscape, and goals.</p>
+        <p><b>Design &amp; Blueprint</b><br>Create a scalable solution architecture and governance model.</p>
+        <p><b>Implement &amp; Integrate</b><br>Deploy, integrate, and automate across your environment.</p>
+        <p><b>Optimize &amp; Evolve</b><br>Continuously improve, monitor, and adapt to changing needs.</p>
+      </article>
+      <article class="blue-panel">
+        <h2>Built for Security. Designed for Scale.</h2>
+        <p>Our solutions are built on proven IAM platforms and best practices to deliver security, scalability, and a
+          superior user experience.</p>
+        <div class="check-columns"><span>✓ Scalable &amp; Flexible</span><span>✓ Seamless Integration</span><span>✓
+            Policy-Driven Control</span><span>✓ End-to-End Visibility</span><span>✓ Strong Security by
+            Design</span><span>✓ Continuous Compliance</span></div><a href="{{ url_for('consultation') }}"
+          class="btn btn-light">Book a Consultation <i class="bi bi-arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+{% elif page_name == 'success' %}
+<section class="section" id="offerings">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Success Stories</h2>
+      <p>Explore how our IAM solutions drive security, efficiency, and business value.</p>
+    </div>
+    <div class="row g-3">{% for icon,title,text in page.cards %}<div class="col-sm-6 col-lg-3">
+        <article class="story-card">
+          <div class="story-icon"><i class="bi bi-{{ icon }}"></i></div><small>{% if loop.index == 1 %}RETAIL{% elif
+            loop.index == 2 %}FINANCIAL SERVICES{% elif loop.index == 3 %}HEALTHCARE{% else %}TECHNOLOGY{% endif
+            %}</small>
+          <h3>{{ title }}</h3>
+          <p>{{ text }}</p>
+          <div class="story-metrics"><b>{% if loop.index == 1 %}70%{% elif loop.index == 2 %}60%{% elif loop.index == 3
+              %}85%{% else %}92%{% endif %}<small>{% if loop.index == 1 %}Reduction in provisioning time{% elif
+                loop.index == 2 %}Faster user access{% elif loop.index == 3 %}Faster access reviews{% else %}Policy
+                compliance{% endif %}</small></b><b>{% if loop.index == 1 %}100%{% elif loop.index == 2 %}99.9%{% elif
+              loop.index == 3 %}100%{% else %}50%{% endif %}<small>{% if loop.index == 1 %}Certification compliance{%
+                elif loop.index == 2 %}SSO availability{% elif loop.index == 3 %}Audit compliance{% else %}Reduction in
+                access risk{% endif %}</small></b></div>{% if loop.index == 1 %}
+
+<a href="{{ url_for('retail_rbac_automation') }}">
+    Read full story
+    <i class="bi bi-arrow-right"></i>
+</a>
+
+
+{% elif loop.index == 3 %}
+
+<a href="{{ url_for('access_review_optimization') }}">
+    Read full story
+    <i class="bi bi-arrow-right"></i>
+</a>
+
+{% elif loop.index == 4 %}
+
+<a href="{{ url_for('cloud_governance_modernization') }}">
+    Read full story
+    <i class="bi bi-arrow-right"></i>
+</a>
+
+{% endif %}
+        </article>
+      </div>{% endfor %}</div>
+  </div>
+</section>
+<section class="section section-tint" id="featured">
+  <div class="container">
+    <article class="case-feature">
+      <div class="case-feature-copy">
+        <p class="eyebrow">FEATURED CASE STUDY</p>
+        <h2>Retail IAM Automation</h2>
+        <p>A leading retail enterprise partnered with Atikes to modernize its identity operations and achieve end-to-end
+          automation across the user lifecycle.</p>
+        <div class="case-mini-grid"><span><i class="bi bi-person-plus"></i><b>Lifecycle Automation</b><small>Automated
+              joiner, mover, and leaver processes.</small></span><span><i class="bi bi-rocket-takeoff"></i><b>Faster
+              Onboarding</b><small>Reduced time to provision new users.</small></span><span><i
+              class="bi bi-shield-check"></i><b>Reduced Manual Effort</b><small>Eliminated repetitive tasks across
+              IAM.</small></span></div>
+      </div>
+      <div class="case-image">
+        <div class="identity-dashboard" aria-label="Retail identity dashboard">
+          <div class="dashboard-sidebar"><i class="bi bi-grid-1x2"></i><i class="bi bi-people"></i><i
+              class="bi bi-shield-check"></i><i class="bi bi-gear"></i></div>
+          <div class="dashboard-content">
+            <div class="dashboard-title">Retail Identity Dashboard</div>
+            <div class="dashboard-metrics"><span><small>Users Managed</small><b>12,842</b></span><span><small>Access
+                  Requests</small><b>1,248</b></span><span><small>Roles</small><b>356</b></span><span><small>Compliance</small><b>100%
+                  <i class="bi bi-check-circle-fill"></i></b></span></div>
+            <div class="dashboard-charts">
+              <div class="line-chart"><b>Access Request Trend</b><svg viewBox="0 0 170 76" role="img"
+                  aria-label="Access request trend rising from January to June">
+                  <path class="grid-line" d="M6 12H164M6 37H164M6 62H164" />
+                  <polyline points="8,56 28,43 48,50 68,31 88,39 108,25 128,29 160,14" /><text x="7"
+                    y="74">Jan</text><text x="38" y="74">Feb</text><text x="68" y="74">Mar</text><text x="98"
+                    y="74">Apr</text><text x="128" y="74">May</text><text x="151" y="74">Jun</text>
+                </svg></div>
+              <div class="provisioning-chart"><b>Provisioning by Status</b>
+                <div class="donut"><span>12,842</span></div>
+                <ul>
+                  <li><i></i>Completed</li>
+                  <li><i></i>In Progress</li>
+                  <li><i></i>Pending</li>
+                </ul>
+              </div>
+            </div>
+            <div class="recent-activity"><b>Recent Activity</b>
+              <div><span>Jane Cooper</span><span>Role Assigned</span><span>Store
+                  Associate</span><em>Completed</em><span>2m ago</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <h3>Business Outcomes</h3><b>70%<small>Reduction in provisioning time</small></b><b>100%<small>Certification
+            compliance</small></b><b>20+<small>Enterprise applications integrated</small></b><b>Stronger
+          Security<small>Consistent policies enforced</small></b>
+      </aside>
+    </article>
+    <blockquote>“Atikes delivered a secure, scalable, and automated identity solution that transformed how we manage
+      access across our enterprise.”<small>— Chief Information Security Officer</small></blockquote>
+  </div>
+</section>
+{% elif page_name == 'health' %}
+<section class="section" id="offerings">
+  <div class="container">
+    <div class="section-heading">
+      <h2>What We Assess</h2>
+    </div>
+    <div class="row g-3">{% for icon,title,text in page.cards %}<div class="col-sm-6 col-lg-3">
+        <article class="feature-card health-card">
+          <div class="feature-icon"><i class="bi bi-{{ icon }}"></i></div>
+          <h3>{{ title }}</h3>
+          <p>{{ text }}</p>
+        </article>
+      </div>{% endfor %}</div>
+  </div>
+</section>
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Our Engagement Process</h2>
+    </div>
+    <div class="process-grid">{% for step in page.method %}<article class="process-card"><span>{{ loop.index }}</span>
+        <div class="process-icon"><i
+            class="bi bi-{{ ['search','clipboard-check','bar-chart','bullseye'][loop.index0] }}"></i></div>
+        <h3>{{ step }}</h3>
+        <p>{% if loop.index == 1 %}We align on scope, objectives, stakeholders, and success criteria.{% elif loop.index
+          == 2 %}Our experts assess architecture, access controls, processes, and tooling.{% elif loop.index == 3 %}We
+          deliver a detailed report with findings, risks, and prioritized recommendations.{% else %}We walk you through
+          the findings and recommend next steps.{% endif %}</p>
+      </article>{% endfor %}</div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Example Deliverables</h2>
+    </div>
+    <div class="deliverable-grid">{% for icon,title,text in page.outcomes %}<article><i
+          class="bi bi-{{ icon }}"></i><b>{{ title }}</b><small>{{ text }}</small></article>{% endfor %}</div>
+    <div class="section-heading who-heading">
+      <h2>Who This is For</h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-sm-6 col-lg-3">
+        <article class="audience-card"><i class="bi bi-person"></i>
+          <div>
+            <h3>CISOs &amp; Security Leaders</h3>
+            <p>Strengthen security posture and reduce identity risk.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <article class="audience-card"><i class="bi bi-people"></i>
+          <div>
+            <h3>IAM &amp; IT Leaders</h3>
+            <p>Improve efficiency and optimize IAM operations.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <article class="audience-card"><i class="bi bi-shield-check"></i>
+          <div>
+            <h3>Compliance &amp; Risk Teams</h3>
+            <p>Ensure controls, governance, and audit readiness.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <article class="audience-card"><i class="bi bi-people-fill"></i>
+          <div>
+            <h3>Digital Transformation Teams</h3>
+            <p>Build a secure foundation for modern identity initiatives.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="health-proof">
+      <div>
+        <h3>Trusted by Enterprises Worldwide</h3><b>50,000+<small>Identities supported</small></b><b>10+<small>Years of
+            IAM experience</small></b><b>100%<small>Consultant-led assessment</small></b>
+      </div>
+      <div class="proof-image"></div>
+      <div class="blue-panel">
+        <h2>Take the First Step Toward a Stronger IAM Program</h2>
+        <p>Request an IAM Health Check and get a clear view of your current state with expert guidance and actionable
+          next steps.</p><a href="{{ url_for('consultation') }}" class="btn btn-light">Request an IAM Health Check <i
+            class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+{% elif page_name == 'partners' %}
+<section class="section partner-offerings" id="offerings">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Platform Partners Powering Secure Identity</h2>
+      <p>We collaborate with leading technology providers to deliver modern, interoperable IAM solutions.</p>
+    </div>
+    <div class="row g-3">{% for icon,title,text in page.cards %}<div class="col-sm-6 col-lg-3">
+        <article class="feature-card partner-card">
+          <div class="feature-icon"><i class="bi bi-{{ icon }}"></i></div>
+          <h3>{{ title }}</h3>
+          <p>{{ text }}</p><a href="{{ url_for('consultation') }}">Learn more <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>{% endfor %}</div>
+    <div class="architecture-grid">
+      <article>
+        <h2>Integration Capabilities</h2>
+        <p><i class="bi bi-check-circle-fill"></i>Pre-built connectors and certified integrations</p>
+        <p><i class="bi bi-check-circle-fill"></i>Standard protocols: SCIM, SAML, OAuth, OIDC</p>
+        <p><i class="bi bi-check-circle-fill"></i>API-first architecture for modern app ecosystems</p>
+        <p><i class="bi bi-check-circle-fill"></i>Automated provisioning and lifecycle orchestration</p>
+        <p><i class="bi bi-check-circle-fill"></i>Real-time directory and identity synchronization</p><a
+          class="btn btn-outline-primary" href="{{ url_for('services_and_solutions') }}">Explore Our Services <i
+            class="bi bi-arrow-right"></i></a>
+      </article>
+      <article class="architecture">
+        <h2>Reference Architecture</h2>
+        <div class="arch-columns">
+          <div><span>Users &amp;
+              Applications</span><span>Employees</span><span>Partners</span><span>Customers</span><span>Devices</span>
+          </div><strong><i class="bi bi-shield-lock"></i> ATIKES IAM Platform<small>Identity Governance<br>&amp; Access
+              Management<br>Lifecycle Management<br>&amp; Automation</small></strong>
+          <div><span>Technology Ecosystem</span><span>Identity Platforms</span><span>Cloud Platforms</span><span>ITSM
+              &amp; ERP</span><span>Applications</span></div>
+        </div>
+      </article>
+      <article>
+        <h2>Partner Ecosystem Value</h2>
+        <p><i class="bi bi-diagram-3"></i>Proven solutions on trusted platforms</p>
+        <p><i class="bi bi-speedometer2"></i>Faster time to value with certified integrations</p>
+        <p><i class="bi bi-shield-check"></i>Reduced risk with aligned roadmaps</p>
+        <p><i class="bi bi-lightbulb"></i>Ongoing innovation and support</p><a class="btn btn-outline-primary"
+          href="{{ url_for('success_stories') }}">See Our
+          Success Stories <i class="bi bi-arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+{% elif page_name == 'about' %}
+<section class="section about-intro">
+  <div class="container about-intro-grid">
+    <article>
+      <p class="eyebrow">OUR MISSION</p>
+      <h2>Building the Future of Identity Security</h2>
+      <p>We believe identity is the new security perimeter. Our mission is to help organizations strengthen identity
+        security, simplify access management, and build a foundation for confident digital growth.</p>
+      <p>We combine deep technical expertise with practical, outcome-focused delivery—so security programs remain
+        scalable as your business evolves.</p><a class="btn btn-outline-primary"
+        href="{{ url_for('consultation') }}">Book a Consultation <i class="bi bi-arrow-right"></i></a>
+    </article>
+    <aside class="about-contact-card">
+      <p>Atikes is registered in the United States as <b>GateWell LLC.</b></p>
+      <div><i class="bi bi-geo-alt"></i><span>30 North Gould Street, Suite R<br>Sheridan, WY 82801</span></div>
+      <div><i class="bi bi-telephone"></i><span>+1 307 500-3302</span></div>
+      <footer><span><i class="bi bi-globe"></i> Headquartered in the USA</span><span><i class="bi bi-people"></i>
+          Serving Global Clients</span><span><i class="bi bi-shield-check"></i> Trusted by Enterprises</span></footer>
+    </aside>
+  </div>
+</section>
+<section class="section section-tint about-values">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">WHAT WE BELIEVE</p>
+      <h2>Our Core Values</h2>
+    </div>
+    <div class="about-value-grid">
+      <article><i class="bi bi-flag"></i>
+        <h3>Our Mission</h3>
+        <p>Empowering organizations with secure, scalable, and trusted identity solutions.</p>
+      </article>{% for icon,title,text in page.cards[:4] %}<article><i class="bi bi-{{ icon }}"></i>
+        <h3>{{ title }}</h3>
+        <p>{{ text }}</p>
+      </article>{% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section about-proof">
+  <div class="container">
+    <div class="about-metric-row"><span><b>50K+</b><small>Identities
+          Supported</small></span><span><b>100+</b><small>Successful Projects</small></span><span><b>10+</b><small>Years
+          of Experience</small></span><span><b>200+</b><small>Enterprise
+          Applications</small></span><span><b>99.9%</b><small>Client Satisfaction</small></span></div>
+  </div>
+</section>
+<!-- =========================================================
+     MEET OUR FOUNDERS
+========================================================= -->
+
+<section class="about-founders">
+
+    <div class="about-founders-container">
+
+        <!-- SECTION HEADER -->
+        <div class="about-founders-heading">
+
+            <span class="about-founders-eyebrow">
+                THE PEOPLE BEHIND ATIKES
+            </span>
+
+            <h2>
+                Meet our Founders
+            </h2>
+
+            <p>
+                Experienced leaders driving secure identity transformation.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FOUNDERS
+        ================================================== -->
+
+        <div class="about-founders-grid">
+
+
+            <!-- ANDREJ SPASOVSKI -->
+            <article class="about-founder">
+
+                <div class="about-founder-image">
+
+                    <img
+                        src="{{ url_for('static', filename='images/team/andrej-spasovski.jpg') }}"
+                        alt="Andrej Spasovski"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Andrej Spasovski
+                </h3>
+
+
+                <p class="about-founder-role">
+                    Co-Founder &amp; IAM Program Director
+                </p>
+
+
+                <div class="about-founder-description">
+
+                    <p>
+                        With a proven track record of launching tech-driven
+                        companies and leading enterprise-scale identity
+                        programs, I specialize in bridging deep technical
+                        execution with long-term security vision.
+                    </p>
+
+                    <p>
+                        Passionate about driving IAM innovation, automation,
+                        and global scalability across complex cloud
+                        ecosystems.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- GANESH ATIKe -->
+            <article class="about-founder">
+
+                <div class="about-founder-image">
+
+                    <img
+                        src="{{ url_for('static', filename='images/team/ganesh-atike.jpg') }}"
+                        alt="Ganesh Atike"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Ganesh Atike
+                </h3>
+
+
+                <p class="about-founder-role">
+                    Co-Founder &amp; IAM Solutions Lead
+                </p>
+
+
+                <div class="about-founder-description">
+
+                    <p>
+                        IAM expert with 13+ years of experience. Passionate
+                        about solving identity challenges and playing cricket.
+                    </p>
+
+                    <p class="founder-fun-fact">
+                        Fun fact: Can debug SailPoint code between cricket
+                        overs.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+
+        <!-- =================================================
+             COMPANY DESCRIPTION
+        ================================================== -->
+
+        <div class="about-company-description">
+
+            <p><strong>
+                Registered in the United States as GateWell LLC, ATIKES
+                combines U.S. business presence with business development
+                headquarters in North Macedonia and a dedicated development
+                office in India.
+            </p></strong>
+
+            <p><strong>
+                Whether you're launching your IAM journey or optimizing a
+                mature environment, we help you stay compliant, audit-ready,
+                and secure at scale.
+            </p></strong>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FULL TEAM BUTTON
+        ================================================== -->
+
+        <div class="about-founders-button">
+
+            <a
+                href="{{ url_for('team') }}"
+                class="meet-team-button"
+            >
+
+                <span>
+                    MEET THE FULL TEAM
+                </span>
+
+                <i class="bi bi-person-fill"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+{% endif %}
+<section class="cta-band {% if page_name == 'partners' %}partner-cta{% endif %}">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+    <div>
+      <h2>{{ page.cta }}</h2>
+      <p>Partner with Atikes to modernize identity, reduce risk, and drive business outcomes.</p>
+    </div><a class="btn btn-light" href="https://calendly.com/atikes-sales/30min" target="_blank"
+      rel="noopener noreferrer">
+
+      Book a Consultation
+      <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+</section>
+{% endblock %}

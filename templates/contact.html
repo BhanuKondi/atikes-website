@@ -1,0 +1,127 @@
+{% extends 'base.html' %}{% block title %}Contact Atikes{% endblock %}{% block content %}
+<section class="contact-hero">
+    <div class="container">
+        <div class="row g-4 align-items-start">
+            <div class="col-lg-4">
+                <p class="eyebrow">CONTACT ATIKES</p>
+                <h1>Let's Talk About Your <span>Identity Program</span></h1>
+                <p class="hero-copy">Have questions, need guidance, or ready to get started? Our identity experts are
+                    here to help CISOs, IAM leaders, and IT teams solve complex identity challenges with confidence.</p>
+                <div class="contact-benefits">
+                    <div><i class="bi bi-gear-wide-connected"></i><b>Expert Guidance</b>
+                        <p>Speak with seasoned IAM professionals who understand your challenges.</p>
+                    </div>
+                    <div><i class="bi bi-bullseye"></i><b>Tailored Solutions</b>
+                        <p>We assess your needs and recommend the right approach.</p>
+                    </div>
+                    <div><i class="bi bi-bar-chart-line"></i><b>Measurable Impact</b>
+                        <p>Drive security, efficiency, and compliance with proven IAM strategies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <form class="contact-form" method="post" id="consultation">
+                    <h2>Send Us a Message</h2>{% with messages = get_flashed_messages(with_categories=true) %}{% for
+                    category,message in messages %}<div class="alert alert-success">{{ message }}</div>{% endfor %}{%
+                    endwith %}<label>Full Name *<input required name="name" class="form-control"
+                            placeholder="Enter your full name"></label><label>Company *<input required name="company"
+                            class="form-control" placeholder="Enter your company name"></label><label>Work Email *<input
+                            required type="email" name="email" class="form-control"
+                            placeholder="name@company.com"></label><label>Service Interest<select class="form-select"
+                            name="service">
+                            <option>Select a service</option>
+                            <option>SailPoint Services</option>
+                            <option>Okta Services</option>
+                            <option>IAM Health Check</option>
+                            <option>Access Governance</option>
+                        </select></label><label>Project Details *<textarea required name="details" class="form-control"
+                            rows="4"
+                            placeholder="Tell us about your goals, challenges, or how we can help..."></textarea></label>
+                    <p class="form-note"><i class="bi bi-shield-lock"></i> Your information is secure and will only be
+                        used to respond to your inquiry.</p><button class="btn btn-primary w-100">Send Message <i
+                            class="bi bi-arrow-right"></i></button>
+                </form>
+            </div>
+            <div class="col-lg-4">
+                <aside class="contact-side">
+                    <article>
+                        <h2>Get in Touch</h2>
+                        <p><i class="bi bi-building"></i>GateWell LLC</p>
+                        <p><i class="bi bi-telephone"></i>+1 307 500-3302</p>
+                        <p><i class="bi bi-geo-alt"></i>30 North Gould Street, Suite R, Sheridan, WY 82801</p>
+                        <p><i class="bi bi-globe"></i>Serving clients globally</p>
+                    </article>
+                    <article class="blue-card">
+                        <h2>Book a Consultation</h2>
+                        <p>Schedule a 30-minute consultation with our IAM experts.</p><a
+                            href="https://calendly.com/atikes-sales/30min" target="_blank" rel="noopener" class="btn btn-light">Book a Consultation <i
+                                class="bi bi-arrow-right"></i></a>
+                    </article>
+                    <article>
+                        <h2>Global Enterprise Support</h2>
+                        <p>Atikes supports enterprise organizations across industries and geographies with secure,
+                            scalable IAM solutions.</p><i class="bi bi-globe-americas"
+                            style="font-size:80px;color:#0a5ee5"></i>
+                    </article>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-tint">
+    <div class="container">
+        <div class="section-heading">
+            <h2>What Happens Next?</h2>
+            <p>We make it easy to start the conversation and deliver value quickly.</p>
+        </div>
+        <div class="process-grid">{% for step in ['Connect','Understand','Recommend','Deliver Value'] %}<article
+                class="process-card"><span>{{ loop.index }}</span>
+                <div class="process-icon"><i
+                        class="bi bi-{{ ['person-plus','chat-dots','shield-check','bar-chart-line'][loop.index0] }}"></i>
+                </div>
+                <h3>{{ step }}</h3>
+                <p>{% if loop.index == 1 %}We receive your inquiry and our team reaches out within one business day.{%
+                    elif loop.index == 2 %}We learn about your goals, challenges, and current environment.{% elif
+                    loop.index == 3 %}We provide tailored recommendations and solution options.{% else %}We partner with
+                    you to drive lasting outcomes.{% endif %}</p>
+            </article>{% endfor %}</div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <article class="faq-card">
+                    <h2>Frequently Asked Questions</h2>{% for question,answer in [('How quickly will I hear back after
+                    submitting a form?','Our team typically responds within one business day.'),('Do you offer
+                    consultations for existing projects?','Yes. We support assessments, optimization, and ongoing IAM
+                    programs.'),('What industries do you work with?','We work with enterprises across retail, finance,
+                    healthcare, technology, and more.'),('Is my information kept confidential?','Yes. We use your
+                    information only to respond to your request.')] %}<button class="faq-question"
+                        aria-expanded="false">{{ question }} <i class="bi bi-chevron-down"></i></button>
+                    <p class="faq-answer">{{ answer }}</p>{% endfor %}
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article class="faq-card">
+                    <h2>Choose How You'd Like to Meet</h2>
+                    <div class="meeting"><b><i class="bi bi-calendar-event"></i> Schedule a Call</b><a
+                            href="https://calendly.com/atikes-sales/30min" target="_blank" rel="noopener">Schedule Now →</a></div>
+                    <div class="meeting"><b><i class="bi bi-camera-video"></i> Virtual Meeting</b><a
+                            href="https://calendly.com/atikes-sales/30min" target="_blank" rel="noopener">Request a Meeting →</a></div>
+                    <div class="meeting"><b><i class="bi bi-envelope"></i> Email Us</b><a
+                            href="mailto:hello@atikes.com">Email Us →</a></div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-band">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+        <div>
+            <h2>Ready to Transform Your Identity Security?</h2>
+            <p>Book a consultation with our IAM experts and take the next step.</p>
+        </div><a class="btn btn-light" href="https://calendly.com/atikes-sales/30min" target="_blank" rel="noopener">Book a Consultation <i
+                class="bi bi-arrow-right"></i></a>
+    </div>
+</section>{% endblock %}

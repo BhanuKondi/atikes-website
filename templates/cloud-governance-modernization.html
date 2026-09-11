@@ -1,0 +1,645 @@
+{% extends "base.html" %}
+
+{% block title %}Cloud Governance Modernization | Atikes{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/cloud-governance-modernization.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="cgm-page">
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section class="cgm-hero">
+
+        <div class="cgm-container cgm-hero-grid">
+
+            <!-- LEFT -->
+            <div class="cgm-hero-copy">
+
+                <span class="cgm-badge">CASE STUDY</span>
+
+                <h1>
+                    Cloud Governance Modernization
+                    <br>
+                    with Daily
+                    <span>Operational Visibility</span>
+                </h1>
+
+                <p>
+                    Unifying joiner, mover, leaver processes, provisioning, access requests,
+                    license governance, and daily monitoring into one modern operating model
+                    for secure, efficient, and compliant cloud operations.
+                </p>
+
+                <div class="cgm-hero-tags">
+
+                    <span>
+                        <i class="bi bi-display"></i>
+                        Daily ops dashboard
+                    </span>
+
+                    <span>
+                        <i class="bi bi-people"></i>
+                        JML visibility
+                    </span>
+
+                    <span>
+                        <i class="bi bi-graph-up-arrow"></i>
+                        Forecasting &amp; trends
+                    </span>
+
+                    <span>
+                        <i class="bi bi-tag"></i>
+                        Reduced license waste
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT DASHBOARD -->
+            <div class="cgm-dashboard">
+
+                <aside class="cgm-dashboard-nav">
+                    <i class="bi bi-house"></i>
+                    <i class="bi bi-people"></i>
+                    <i class="bi bi-shield-check"></i>
+                    <i class="bi bi-bar-chart-line"></i>
+                    <i class="bi bi-gear"></i>
+                </aside>
+
+
+                <div class="cgm-dashboard-body">
+
+                    <div class="cgm-dashboard-header">
+
+                        <strong>Operational Overview</strong>
+
+                        <span>Last 7 days <i class="bi bi-chevron-down"></i></span>
+
+                    </div>
+
+
+                    <div class="cgm-dashboard-top">
+
+                        <div class="cgm-dashboard-metrics">
+
+                            <div class="cgm-dashboard-metric">
+                                <small>Joiners</small>
+                                <strong>124</strong>
+                                <em class="up">↑ 12%</em>
+                            </div>
+
+                            <div class="cgm-dashboard-metric">
+                                <small>Movers</small>
+                                <strong>38</strong>
+                                <em class="up">↑ 5%</em>
+                            </div>
+
+                            <div class="cgm-dashboard-metric">
+                                <small>Leavers</small>
+                                <strong>22</strong>
+                                <em class="down">↓ 8%</em>
+                            </div>
+
+                            <div class="cgm-dashboard-metric">
+                                <small>Provisioning success</small>
+                                <strong>98.7%</strong>
+                                <em class="up">↑ 1.4%</em>
+                            </div>
+
+                            <div class="cgm-dashboard-metric">
+                                <small>Open access requests</small>
+                                <strong>61</strong>
+                                <em class="up">↑ 6%</em>
+                            </div>
+
+                            <div class="cgm-dashboard-metric">
+                                <small>License waste alerts</small>
+                                <strong>14</strong>
+                                <em class="down">↓ 2%</em>
+                            </div>
+
+                        </div>
+
+
+                        <div class="cgm-forecast-card">
+
+                            <div class="cgm-forecast-title">
+                                Weekly IAM Activity Forecast
+                            </div>
+
+                            <div class="cgm-legend">
+                                <span><i class="actual-dot"></i> Actual</span>
+                                <span><i class="forecast-line"></i> Forecast</span>
+                            </div>
+
+                            <div class="cgm-chart">
+
+                                <div class="cgm-chart-grid">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <svg viewBox="0 0 330 150"
+                                     preserveAspectRatio="none">
+
+                                    <polyline
+                                        points="0,110 38,98 76,83 114,97 152,78 190,88 228,70 266,58 305,48 330,43"
+                                        fill="none"
+                                        stroke="#2874e2"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                    </polyline>
+
+                                    <polyline
+                                        points="225,73 250,68 275,60 300,54 330,44"
+                                        fill="none"
+                                        stroke="#73a8f1"
+                                        stroke-width="2"
+                                        stroke-dasharray="5 5">
+                                    </polyline>
+
+                                </svg>
+
+                            </div>
+
+                            <div class="cgm-chart-labels">
+                                <span>May 5</span>
+                                <span>May 12</span>
+                                <span>May 19</span>
+                                <span>May 26</span>
+                                <span>Jun 2</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INFORMATION CARDS
+    ====================================================== -->
+    <section class="cgm-main">
+
+        <div class="cgm-container">
+
+            <div class="cgm-info-grid">
+
+                <article class="cgm-info-card">
+                    <div class="cgm-info-icon">
+                        <i class="bi bi-building"></i>
+                    </div>
+                    <div>
+                        <small>Industry</small>
+                        <strong>
+                            Enterprise technology /<br>
+                            cloud-heavy environment
+                        </strong>
+                    </div>
+                </article>
+
+
+                <article class="cgm-info-card">
+                    <div class="cgm-info-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <div>
+                        <small>Use case</small>
+                        <strong>
+                            Cloud governance<br>
+                            modernization
+                        </strong>
+                    </div>
+                </article>
+
+
+                <article class="cgm-info-card">
+                    <div class="cgm-info-icon">
+                        <i class="bi bi-arrow-repeat"></i>
+                    </div>
+                    <div>
+                        <small>Annual volume</small>
+                        <strong>
+                            Thousands of daily<br>
+                            identity events
+                        </strong>
+                    </div>
+                </article>
+
+
+                <article class="cgm-info-card">
+                    <div class="cgm-info-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <div>
+                        <small>Delivery model</small>
+                        <strong>
+                            Centralized monitoring<br>
+                            and automation
+                        </strong>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 CHALLENGE / SOLUTION
+            ================================================== -->
+            <div class="cgm-two-column">
+
+                <article class="cgm-panel">
+
+                    <h2>
+                        <i class="bi bi-exclamation-triangle"></i>
+                        The Challenge
+                    </h2>
+
+                    <ul>
+                        <li>Scattered visibility across multiple cloud applications and tools.</li>
+                        <li>Reactive issue handling led to delays and access risks.</li>
+                        <li>Unclear provisioning status for joiners, movers, and leavers.</li>
+                        <li>Excess SaaS licenses contributed to unnecessary spend.</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="cgm-panel">
+
+                    <h2>
+                        <i class="bi bi-check-circle-fill"></i>
+                        The Solution
+                    </h2>
+
+                    <ul>
+                        <li>Centralized dashboard for daily operational visibility.</li>
+                        <li>JML orchestration with automated provisioning and deprovisioning.</li>
+                        <li>End-to-end access request tracking and SLA monitoring.</li>
+                        <li>License waste detection through usage and inactivity insights.</li>
+                        <li>Trend and forecast visibility to plan capacity and optimize spend.</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 PROCESS
+            ================================================== -->
+            <div class="cgm-process">
+
+                <div class="cgm-process-item">
+
+                    <div class="cgm-process-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+
+                    <strong>JML / source event</strong>
+
+                </div>
+
+                <div class="cgm-arrow">→</div>
+
+                <div class="cgm-process-item">
+
+                    <div class="cgm-process-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <strong>
+                        Identity governance<br>
+                        policy
+                    </strong>
+
+                </div>
+
+                <div class="cgm-arrow">→</div>
+
+                <div class="cgm-process-item">
+
+                    <div class="cgm-process-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <strong>
+                        Provisioning &amp;<br>
+                        approvals
+                    </strong>
+
+                </div>
+
+                <div class="cgm-arrow">→</div>
+
+                <div class="cgm-process-item">
+
+                    <div class="cgm-process-icon">
+                        <i class="bi bi-cloud"></i>
+                    </div>
+
+                    <strong>Application sync</strong>
+
+                </div>
+
+                <div class="cgm-arrow">→</div>
+
+                <div class="cgm-process-item">
+
+                    <div class="cgm-process-icon">
+                        <i class="bi bi-display"></i>
+                    </div>
+
+                    <strong>
+                        Operational<br>
+                        monitoring
+                    </strong>
+
+                </div>
+
+                <div class="cgm-arrow">→</div>
+
+                <div class="cgm-process-item">
+
+                    <div class="cgm-process-icon">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+
+                    <strong>
+                        Forecasting &amp;<br>
+                        optimization
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ROI / IMPLEMENTATION
+            ================================================== -->
+            <div class="cgm-results-grid">
+
+                <article class="cgm-roi">
+
+                    <h2>ROI / Impact at a Glance</h2>
+
+                    <div class="cgm-roi-grid">
+
+                        <div class="cgm-roi-card">
+                            <i class="bi bi-shield-check"></i>
+                            <strong>92%</strong>
+                            <span>Policy compliance</span>
+                        </div>
+
+                        <div class="cgm-roi-card">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                            <strong>50%</strong>
+                            <span>Faster issue response</span>
+                        </div>
+
+                        <div class="cgm-roi-card">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <strong>98.7%</strong>
+                            <span>Provisioning success</span>
+                        </div>
+
+                        <div class="cgm-roi-card">
+                            <i class="bi bi-exclamation-diamond-fill"></i>
+                            <strong>14</strong>
+                            <span>Recurring license waste alerts surfaced</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="cgm-effort">
+
+                    <div class="cgm-effort-header">
+
+                        <div>
+                            <h2>Implementation Effort Breakdown</h2>
+                            <p>Delivered through a focused cross-functional effort.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="cgm-effort-labels">
+
+                        <span>
+                            Discovery
+                            <b>30h</b>
+                        </span>
+
+                        <span>
+                            Dashboard design
+                            <b>40h</b>
+                        </span>
+
+                        <span>
+                            Integration build
+                            <b>80h</b>
+                        </span>
+
+                        <span>
+                            Data modernization
+                            <b>50h</b>
+                        </span>
+
+                        <span>
+                            Forecasting
+                            <b>30h</b>
+                        </span>
+
+                        <span>
+                            Hypercare
+                            <b>10h</b>
+                        </span>
+
+                    </div>
+
+
+                    <div class="cgm-effort-bar">
+
+                        <span class="effort-1"></span>
+                        <span class="effort-2"></span>
+                        <span class="effort-3"></span>
+                        <span class="effort-4"></span>
+                        <span class="effort-5"></span>
+                        <span class="effort-6"></span>
+
+                    </div>
+
+                    <strong class="cgm-total">
+                        Total: 240h
+                    </strong>
+
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 OPERATIONAL VIEWS
+            ================================================== -->
+            <h2 class="cgm-views-title">
+                Operational Views Included
+            </h2>
+
+            <div class="cgm-views-grid">
+
+                <article>
+                    <i class="bi bi-people"></i>
+                    <div>
+                        <strong>Joiner / Mover / Leaver tracking</strong>
+                        <span>
+                            Real-time JML visibility with status,
+                            timelines, and completion metrics.
+                        </span>
+                    </div>
+                </article>
+
+                <article>
+                    <i class="bi bi-list-check"></i>
+                    <div>
+                        <strong>Provisioning queue visibility</strong>
+                        <span>
+                            Monitor in-progress tasks with SLA
+                            and ownership tracking.
+                        </span>
+                    </div>
+                </article>
+
+                <article>
+                    <i class="bi bi-graph-up"></i>
+                    <div>
+                        <strong>Access request trends</strong>
+                        <span>
+                            Track request volume, approvals,
+                            denials, and turnaround time.
+                        </span>
+                    </div>
+                </article>
+
+                <article>
+                    <i class="bi bi-tag"></i>
+                    <div>
+                        <strong>License waste monitoring</strong>
+                        <span>
+                            Identify inactive and under-utilized
+                            licenses to reduce unnecessary spend.
+                        </span>
+                    </div>
+                </article>
+
+                <article>
+                    <i class="bi bi-bar-chart-line"></i>
+                    <div>
+                        <strong>Forecast reporting</strong>
+                        <span>
+                            Trend analysis and forecasting to
+                            plan capacity and optimize operations.
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUOTE
+            ================================================== -->
+            <div class="cgm-quote">
+
+                <div class="cgm-quote-icon">
+                    “
+                </div>
+
+                <p>
+                    Atikes helped us bring structure and speed to our access reviews.
+                    Manager engagement improved significantly, and we now have clear
+                    visibility to reduce risk and meet audit expectations.
+                </p>
+
+                <div class="cgm-quote-person">
+                    <strong>Head of IAM Governance</strong>
+                    <span>Global Retail Enterprise</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+    <section class="cgm-cta">
+
+        <div class="cgm-container cgm-cta-inner">
+
+            <div class="cgm-cta-icon">
+                <i class="bi bi-people"></i>
+            </div>
+
+            <div class="cgm-cta-copy">
+
+                <h2>
+                    Need daily visibility across your identity environment?
+                </h2>
+
+                <p>
+                    Atikes helps organizations modernize cloud governance,
+                    reduce risk, and optimize cost with real-time operational
+                    visibility and intelligent automation.
+                </p>
+
+            </div>
+
+            <div class="cgm-cta-actions">
+
+                <a href="https://calendly.com/atikes-sales/30min"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="cgm-btn-primary">
+                    Talk to Atikes
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+                <a href="{{ url_for('success_stories') }}"
+                   class="cgm-btn-outline">
+                    View More Success Stories
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}

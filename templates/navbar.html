@@ -1,0 +1,87 @@
+<header class="site-header sticky-top" id="siteHeader">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <!-- ATIKES Brand -->
+            <a class="navbar-brand logo-link d-flex align-items-center"
+               href="{{ url_for('home') }}">
+
+                <img
+                    src="{{ url_for('static', filename='images/atikes-logo.png') }}"
+                    alt="Atikes logo"
+                    class="atikes-logo">
+
+                <span class="atikes-brand-name">ATIKES</span>
+            </a>
+
+            <!-- Mobile Menu -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav"
+                aria-controls="mainNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center atikes-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'home' %}active{% endif %}"
+                           href="{{ url_for('home') }}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint in ['services_and_solutions', 'services', 'solutions', 'service_detail', 'iam_health_check'] %}active{% endif %}"
+                           href="{{ url_for('services_and_solutions') }}">
+                            Services &amp; Solutions
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'partners' %}active{% endif %}"
+                           href="{{ url_for('partners') }}">
+                            Technology Partners
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'success_stories' %}active{% endif %}"
+                           href="{{ url_for('success_stories') }}">
+                            Success Stories
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}"
+                           href="{{ url_for('about') }}">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}"
+                           href="{{ url_for('contact') }}">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a
+                            class="btn btn-primary nav-consultation"
+                            href="{{ url_for('consultation') }}">
+                            Book a Consultation <span>→</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

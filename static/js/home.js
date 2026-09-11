@@ -1,0 +1,1 @@
+document.querySelectorAll('.case-fact, .case-metric, .case-outcome').forEach((card) => { card.addEventListener('pointerenter', () => card.classList.add('is-hovered')); card.addEventListener('pointerleave', () => card.classList.remove('is-hovered')); });
